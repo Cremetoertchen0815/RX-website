@@ -1,0 +1,19 @@
+@font-face {
+    font-family: SciFly;
+    src: url(../font/SciFly-Sans.woff);
+}
+
+body {
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.random {
+    font-family: SciFly;
+}
+
+h1 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 3em;
+}
