@@ -1,14 +1,25 @@
+@font-face {
+    font-family: SciFly;
+    src: url(../font/SciFly-Sans.woff);
+}
+
 body {
     background-color: black;
     margin: 0px;
+    font-family: SciFly, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 iframe {
-    width: 100%;
+    width: min(1250px, 65%);
     height: 100%;
     display: block;
     margin: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
     border: none;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #mainContainer {
@@ -17,11 +28,76 @@ iframe {
     height: 100%;
 }
 
+#navWide {
+    width: 1000px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#navNarrow {
+    display: none;
+    width: 160px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#navArrow {
+    width: 32px;
+    margin-top: 28px;
+    float: right;
+    pointer-events: none;
+}
+
+#navNarrowList {
+    height: 0%;
+    transition: height 0.3s ease-in-out;
+    display: none;
+}
+
+
+#cornerLogo {
+    height: inherit;
+    float: left;
+}
+
+.navPoint {
+    color: white;
+    background-color: black;
+    font-size: 1.7em;
+    line-height: 2.2em;
+    width: 150px;
+    height: 60px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px;
+    margin-top: 25px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.navPoint:hover {
+    color: black;
+    background-color: white;
+}
+
+vl {
+    display: inline-block;
+    width: 3px;
+    height: 60px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    top: 20px;
+}
+
 #pageCover {
     background-color: rgb(0, 0, 0);
     width: 100%;
     height: 100vh;
     position: absolute;
+    z-index: 5;
 }
 
 #logoCenterer {
@@ -31,27 +107,68 @@ iframe {
     margin-top: 100px;
 }
 
-@media (max-width: 700px) and (orientation: portrait)  {
+
+
+@media (max-width: 1000px) {
+
+    #navWide {
+        display: none;
+    }
+
+    #navNarrow {
+        display: block;
+    }
+
+    #navNarrowList {
+        display: block;
+    }
+
+    .navPoint {
+        width: 100%;
+        display: block;
+        margin-top: 10px;
+    }
+
+    iframe {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1000px) and (orientation: portrait) {
     #logoCenterer {
         width: 100%;
         margin-right: auto;
         margin-left: auto;
         margin-top: 50%;
     }
+
+    #navNarrowList {
+        max-height: 380px;
+    }
 }
 
-@media (max-height: 700px) and (orientation: landscape)  {
+@media (max-height: 450px) and (orientation: landscape) {
+    
+    .navPoint {
+        height: 40px;
+        margin-top: 8px;
+        line-height: 1.6em;
+    }
+}
+
+@media (max-width: 1000px) and (orientation: landscape) {
     #logoCenterer {
         width: 50%;
         margin-right: auto;
         margin-left: auto;
         margin-top: calc(30vh - 100px);
     }
+
 }
 
 .svgAbs {
     position: absolute;
-    width: inherit;  
+    width: inherit;
     transform-origin: center 200px;
 }
 
@@ -72,10 +189,9 @@ iframe {
 }
 
 .fadeOut {
-    animation: fade-out 0.4s ease-out forwards;
+    animation: fade-out 0.3s ease-out forwards;
     opacity: 100%;
 }
-
 
 @keyframes spin {
     from {

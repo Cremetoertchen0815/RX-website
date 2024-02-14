@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/container.css">
-    <title>Document</title>
+    <link rel="icon" type="image/svg+xml" href="img/logo/favicon.svg" sizes="any">
+    <link rel="icon" href="img/logo/favicon.png" type="image/png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <title>Random X Homepage</title>
 </head>
 
 <body>
@@ -18,11 +21,38 @@
             </div>
 
         </div>
-        
+
+        <div id="navWide">
+            <img src="img/logo/logo_no_text_white.svg" id="cornerLogo">
+            <span class="navPoint" destination="start.html" style="text-decoration: underline;">START</span>
+            <vl></vl>
+            <span class="navPoint" destination="gigs.html">GIGS</span>
+            <vl></vl>
+            <span class="navPoint" destination="pics.html">BILDER</span>
+            <vl></vl>
+            <span class="navPoint" destination="contact.html">KONTAKT</span>
+            <vl></vl>
+            <span class="navPoint" destination="impress.html">IMPRESSUM</span>
+        </div>
+
+        <div id="navNarrow">
+            <img src="img/logo/logo_no_text_white.svg" id="cornerLogo">
+            <img src="img/arrow_down.png" id="navArrow">
+        </div>
+        <div id="navNarrowList">
+            <hr>
+            <span class="navPoint" destination="start.html" style="text-decoration: underline;">START</span>
+            <span class="navPoint" destination="gigs.html">GIGS</span>
+            <span class="navPoint" destination="pics.html">BILDER</span>
+            <span class="navPoint" destination="contact.html">KONTAKT</span>
+            <span class="navPoint" destination="impress.html">IMPRESSUM</span>
+        </div>
+
         <iframe id="pageContainer"></iframe>
     </div>
 
-    <script src="js/container.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/startAnimation.js"></script>
 </body>
 
 </html>
