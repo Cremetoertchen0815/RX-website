@@ -1,6 +1,6 @@
 let slideIndex = 1;
 showSlides(slideIndex);
-setInterval(() => plusSlides(1), 5000);
+setTimeout(() => setInterval(() => plusSlides(1), 6000), 3000);
 
 // Next/previous controls
 function plusSlides(n) {

@@ -10,16 +10,9 @@
 <body>
     <h1>Herzlich Willkommen bei <br><b class="random">RANDOM X</b>!</h1>
 
-    <img src="img/grp_bild.jpg" id="groupPic">
-    <br>
-
-    <p>
-      Hi, wir sind <b>RANDOM X</b>, eine Cover-Band aus Haßmersheim! <br>
-       Wir covern alles von Pop bis Rock, von <b>(A)</b>BBA bis <b>(Z)</b>ombie. Schaut euch gerne um, über einen Besuch auf einem unserer nächsten Konzerte würden wir uns sehr freuen!  
-    </p>
 	
 	<!-- Slideshow container -->
-<div class="slideshow-container">
+  <div class="slideshow-container">
 
 <?php
 
@@ -59,6 +52,12 @@ foreach($files as $file) {
 }
 ?>
 </div>
+    <br>
+
+    <p>
+      Hi, wir sind <b>RANDOM X</b>, eine Cover-Band aus Haßmersheim! <br>
+       Wir covern alles von Pop bis Rock, von <b>(A)</b>BBA bis <b>(Z)</b>ombie. Schaut euch gerne um, über einen Besuch auf einem unserer nächsten Konzerte würden wir uns sehr freuen!  
+    </p>
 
 <br><br><br><br><br><br>
 
