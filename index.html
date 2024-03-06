@@ -19,21 +19,24 @@
                 <img src="img/logo/logo_letters_white.svg" id="logoLetters" class="svgAbs">
                 <img src="img/logo/logo_text_white.svg" id="logoText" class="svgAbs">
             </div>
-
         </div>
 
-        <div id="navWide">
-            <img src="img/logo/logo_no_text_white.svg" id="cornerLogo">
-            <span class="navPoint" destination="start.html" style="text-decoration: underline;">START</span>
-            <vl></vl>
-            <span class="navPoint" destination="gigs.html">GIGS</span>
-            <vl></vl>
-            <span class="navPoint" destination="pics.html">BILDER</span>
-            <vl></vl>
-            <span class="navPoint" destination="contact.html">KONTAKT</span>
-            <vl></vl>
-            <span class="navPoint" destination="impress.html">IMPRESSUM</span>
+        <div id="navContainer">
+            <div id="navWide">
+                <img src="img/logo/logo_no_text_white.svg" id="cornerLogo">
+                <span class="navPoint" destination="start.php" style="text-decoration: underline;">START</span>
+                <vl></vl>
+                <span class="navPoint" destination="gigs.html">GIGS</span>
+                <vl></vl>
+                <span class="navPoint" destination="pics.html">BILDER</span>
+                <vl></vl>
+                <span class="navPoint" destination="contact.html">KONTAKT</span>
+                <vl></vl>
+                <span class="navPoint" destination="imprint.html">IMPRESSUM</span>
+            </div>
         </div>
+
+        <img src="img/bg.jpg" id="bgImg">
 
         <div id="navNarrow">
             <img src="img/logo/logo_no_text_white.svg" id="cornerLogo">
@@ -41,14 +44,14 @@
         </div>
         <div id="navNarrowList" style="height: 0px;">
             <hr>
-            <span class="navPoint" destination="start.html" style="text-decoration: underline;">START</span>
+            <span class="navPoint" destination="start.php" style="text-decoration: underline;">START</span>
             <span class="navPoint" destination="gigs.html">GIGS</span>
             <span class="navPoint" destination="pics.html">BILDER</span>
             <span class="navPoint" destination="contact.html">KONTAKT</span>
-            <span class="navPoint" destination="impress.html">IMPRESSUM</span>
+            <span class="navPoint" destination="imprint.html">IMPRESSUM</span>
         </div>
 
-        <iframe id="pageContainer"></iframe>
+        <iframe id="pageContainer" onload="this.width=screen.width;this.height=screen.height;"> </iframe>
     </div>
 
     <script src="js/navigation.js"></script>

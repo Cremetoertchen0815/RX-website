@@ -9,7 +9,7 @@ startFadeOut = () => {
 };
 
 const container = document.getElementById("pageContainer");
-container.src = "start.html";
+container.src = "start.php";
 container.onload = () => {
     contentLoaded = true;
     if (animationComplete) startFadeOut();
