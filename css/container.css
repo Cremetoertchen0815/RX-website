@@ -143,6 +143,10 @@ vl {
 
 @media (max-width: 1000px) {
 
+    #bgImg {
+        display: none;
+    }
+
     #navWide {
         display: none;
     }
