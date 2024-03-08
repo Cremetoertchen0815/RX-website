@@ -12,7 +12,7 @@
 <body>
     <h1>Gigs</h1>
 
-    <br><br>
+    <br>
     <div class="gig">
         <div class="gigLeft">
             <h2>Sportlerfasching Spfr. Haßmersheim</h2>

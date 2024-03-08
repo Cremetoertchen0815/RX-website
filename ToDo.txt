@@ -1,4 +1,3 @@
--Adapt gig calendar design for mobile
 -Implement backend logic
 -Implement galery
 -Implement admin tool for administrating gigs and pictures

@@ -175,6 +175,18 @@ vl {
         line-height: 1.6em;
         font-size: 1.2em;
     }
+
+    #footer {
+        height: 50px;
+        width: 160px;
+        left: calc(50% - 80px);
+    }
+
+    .socialMediaIcon {
+        width: 32px;
+        margin-top: 9px;
+        margin-left: 14px;
+    }
 }
 
 @media (max-width: 1000px) and (orientation: portrait) {
@@ -186,9 +198,7 @@ vl {
     }
 }
 
-@media (max-height: 450px) and (orientation: landscape) {
-    
-}
+@media (max-height: 450px) and (orientation: landscape) {}
 
 @media (max-width: 1000px) and (orientation: landscape) {
     #logoCenterer {

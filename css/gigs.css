@@ -1,4 +1,3 @@
-
 .gig {
     border: black solid 2px;
     width: 60%;
@@ -52,4 +51,33 @@ h2 {
 .gigLink {
     color: black;
     text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+
+    .gig {
+        border-left: none;
+        border-right: none;
+        width: 100%;
+        height: auto;
+        padding-right: 0px;
+        padding-left: 0px;
+        border-radius: 0px;
+        line-height: 22px;
+        font-size: 0.9em;
+    }
+
+    .gigLeft {
+        float: none;
+    }
+
+    .gigRight {
+        float: none;
+        text-align: center;
+    }
+
+    #oldConcertsHeading {
+        width: 95%;
+        position: static;
+    }
 }
