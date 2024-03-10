@@ -13,44 +13,63 @@
     <h1>Gigs</h1>
 
     <br>
-    <div class="gig">
-        <div class="gigLeft">
-            <h2>Sportlerfasching Spfr. Haßmersheim</h2>
-            <b>Eintritt: </b> 10€<br>
-            <span class="place">Turn- und Festhalle, Teststraße 7, 74855 Haßmersheim</span>
-        </div>
-        <div class="gigRight">
-            <span class="dateSpan">01.02.2024</span><br>
-            <b>Einlass:</b> 20 Uhr<br>
-            <b>Beginn:</b> 21 Uhr
-        </div>
-    </div>
 
-    <span id="oldConcertsHeading">VERGANGENE KONZERTE:</span>
-    <div class="gig">
-        <div class="gigLeft">
-            <h2>Sportlerfasching Spfr. Haßmersheim</h2>
-            <br>
-            <span class="place">Turn- und Festhalle, Teststraße 7, 74855 Haßmersheim</span>
+    <?php
+    $data = file('./backend/gigs.dat');
+    $old_dates = [];
+
+    foreach ($data as $line) {
+        //Split CSV by delimiter and skip header
+        $current = explode(';', $line);
+        if ($current[0] == "Id")
+            continue;
+
+        //If gig is passed already, we'll add it to the list later and can forget about it now
+        if ($current[4] < date("d.m.Y")) {
+            $old_dates[] = $current;
+            continue;
+        }
+
+        //Render gig
+        ?>
+
+        <div class="gig">
+            <div class="gigLeft">
+                <h2><?php echo $current[1] ?></h2>
+                <b>Eintritt: </b><?php echo $current[3] ?><br>
+                <span class="place"><?php echo $current[2] ?></span>
+            </div>
+            <div class="gigRight">
+                <span class="dateSpan"><?php echo $current[4] ?></span><br>
+                <b>Einlass: </b><?php echo $current[5] ?><br>
+                <b>Beginn: </b><?php echo $current[6] ?>
+            </div>
         </div>
-        <div class="gigRight">
-            <span class="dateSpan">01.02.2024</span><br>
-            <a href="Deine Mama" class="gigLink">Bilder</a><br>
-            <a href="Deine Mama" class="gigLink">Videos</a>
+
+    <?php
+    }
+
+    echo '<span id="oldConcertsHeading">VERGANGENE KONZERTE:</span>';
+
+    foreach ($old_dates as $line) {
+        ?>
+
+        <div class="gig">
+            <div class="gigLeft">
+                <h2><?php echo $current[1] ?></h2>
+                <br>
+                <span class="place"><?php echo $current[2] ?></span>
+            </div>
+            <div class="gigRight">
+                <span class="dateSpan"><?php echo $current[4] ?></span><br>
+                <a href="gallery.php?id=<?php echo $current[0] ?>" class="gigLink">Bilder</a><br>
+                <a href="gallery.php?id=<?php echo $current[0] ?>" class="gigLink">Videos</a>
+            </div>
         </div>
-    </div>
-    <div class="gig">
-        <div class="gigLeft">
-            <h2>Sportlerfasching Spfr. Haßmersheim</h2>
-            <br>
-            <span class="place">Turn- und Festhalle, Teststraße 7, 74855 Haßmersheim</span>
-        </div>
-        <div class="gigRight">
-            <span class="dateSpan">01.02.2024</span><br>
-            <a href="Deine Mama" class="gigLink">Bilder</a><br>
-            <a href="Deine Mama" class="gigLink">Videos</a>
-        </div>
-    </div>
+
+        <?php
+    }
+    ?>
 </body>
 
 </html>
