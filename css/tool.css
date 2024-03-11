@@ -1,0 +1,59 @@
+#logonSection {
+    line-height: 25px;
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+    background-color: #abbaba;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: solid 2px;
+    border-radius: 15px;
+}
+
+#wrongCredentials {
+    color: red;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.gig {
+    background-color: #abbaba;
+    padding: 20px;
+    border: solid 2px;
+    border-radius: 10px;
+    width: 470px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.gigIcons {
+    float: right;
+}
+
+.editIcon {
+    height: 32px;
+    margin-right: 10px;
+}
+
+.deleteIcon {
+    filter: invert();
+    height: 48px;
+    position: relative;
+    top: 5px;
+}
+
+#addGigIcon {
+    font-size: 2em;
+    background-color: #abbaba;
+    width: 50px;
+    text-align: center;
+    padding: 10px;
+    margin-left: 20px;
+    border: solid 2px;
+    border-radius: 15px;
+}
