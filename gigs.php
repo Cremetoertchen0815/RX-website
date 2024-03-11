@@ -15,7 +15,7 @@
     <br>
 
     <?php
-    $data = file('./backend/gigs.dat');
+    $data = file('./admin/gigs.dat');
     $old_dates = [];
 
     foreach ($data as $line) {
@@ -25,10 +25,12 @@
             continue;
 
         //If gig is passed already, we'll add it to the list later and can forget about it now
-        if ($current[4] < date("d.m.Y")) {
+        if ($current[4] < date("Y-m-d")) {
             $old_dates[] = $current;
             continue;
         }
+
+        $redate = DateTime::createFromFormat('Y-m-d', $current[4])
 
         //Render gig
         ?>
@@ -40,9 +42,9 @@
                 <span class="place"><?php echo $current[2] ?></span>
             </div>
             <div class="gigRight">
-                <span class="dateSpan"><?php echo $current[4] ?></span><br>
-                <b>Einlass: </b><?php echo $current[5] ?><br>
-                <b>Beginn: </b><?php echo $current[6] ?>
+                <span class="dateSpan"><?php echo $redate->format('d.m.Y') ?></span><br>
+                <b>Einlass: </b><?php echo $current[5] ?> Uhr<br>
+                <b>Beginn: </b><?php echo $current[6] ?> Uhr
             </div>
         </div>
 
@@ -51,7 +53,9 @@
 
     echo '<span id="oldConcertsHeading">VERGANGENE KONZERTE:</span>';
 
-    foreach ($old_dates as $line) {
+    $old_dates = array_reverse($old_dates);
+    foreach ($old_dates as $current) {
+        $redate = DateTime::createFromFormat('Y-m-d', $current[4])
         ?>
 
         <div class="gig">
@@ -61,7 +65,7 @@
                 <span class="place"><?php echo $current[2] ?></span>
             </div>
             <div class="gigRight">
-                <span class="dateSpan"><?php echo $current[4] ?></span><br>
+                <span class="dateSpan"><?php echo $redate->format('d.m.Y') ?></span><br>
                 <a href="gallery.php?id=<?php echo $current[0] ?>" class="gigLink">Bilder</a><br>
                 <a href="gallery.php?id=<?php echo $current[0] ?>" class="gigLink">Videos</a>
             </div>

@@ -21,12 +21,13 @@ $keyed_data = [];
 foreach ($raw_data as $line) {
     $curr_data = explode(';', str_replace("\n", "", $line));
 
+    if ($curr_data[0] == $_POST["id"]) {
+        $curr_data = [$_POST["id"], $_POST["title"], $_POST["adress"], $_POST["price"], $_POST["date"], $_POST["entry"], $_POST["begins"], ""];
+    }
+
     if ($curr_data[0] != "Id")
         $keyed_data[$curr_data[4]] = $curr_data;
 }
-
-//Append new item
-$keyed_data[$_POST["date"]] = ["0", $_POST["title"], $_POST["adress"], $_POST["price"], $_POST["date"], $_POST["entry"], $_POST["begins"], ""];
 
 //Sort by date
 ksort($keyed_data);
@@ -35,7 +36,7 @@ ksort($keyed_data);
 $half_imploded = ["Id;Name;Preis;Datum;Einlass;Beginn;-"];
 foreach ($keyed_data as $key => $val) {
     $val[0] = (string)count($half_imploded);
-    $half_imploded[] = implode(";", $val);
+    $half_imploded[] = implode(";", $val) . ";-";
 }
 
 file_put_contents('../gigs.dat', implode("\n", $half_imploded));

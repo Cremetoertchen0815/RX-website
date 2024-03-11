@@ -25,11 +25,11 @@
 
 
     $id = $_POST["id"] ?? "";
-    $method = $id == "" ? "create" : "change";
+    $method = $id == "" ? "create" : "modify";
     $current_data = null;
 
     //Load data if entry is edited
-    if ($method == "change") {
+    if ($method == "modify") {
         $data = file('gigs.dat');
         foreach ($data as $line) {
             //Split CSV by delimiter and skip header
@@ -46,7 +46,7 @@
     $title = $current_data[1] ?? "";
     $adress = $current_data[2] ?? "";
     $price = $current_data[3] ?? "Frei";
-    $date = $current_data[4] ?? date("d.m.Y");
+    $date = $current_data[4] ?? date("Y-m-d");
     $entry = $current_data[5] ?? date("G:i");
     $begins = $current_data[6] ?? date("G:i");
 
@@ -57,7 +57,7 @@
         Zurück zur Liste
     </div>
     <div id="editArea">
-        <form method="post" action="<?php echo $method; ?>" id="editForm">
+        <form method="post" action="/admin/api/<?php echo $method; ?>.php" id="editForm">
             <label for="title">Name: </label><input type="text" name="title" value="<?php echo $title; ?>"><br>
             <label for="adress">Addresse: </label><input type="text" name="adress" value="<?php echo $adress; ?>"><br>
             <label for="price">Eintritt: </label><input type="text" name="price" value="<?php echo $price; ?>"><br>
@@ -67,7 +67,7 @@
 
             <input type="hidden" name="name" value="<?php echo $username; ?>">
             <input type="hidden" name="password" value="<?php echo $password; ?>">
-            <input type="hidden" name="id" value="">
+            <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
             <input type="submit" value="Speichern">
         </form>
     </div>
