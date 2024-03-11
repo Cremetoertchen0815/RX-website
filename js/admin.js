@@ -1,13 +1,20 @@
 
-$("#addGigIcon").click((e) => openEditPage("add", undefined));
-$(".editIcon").click((e) => openEditPage("edit", e.target.parentNode.parentNode.getAttribute("gigid")));
+
+$("#addGigIcon").click((e) => openEditPage(""));
+$(".editIcon").click((e) => openEditPage(e.target.parentNode.parentNode.getAttribute("gigid")));
 $(".deleteIcon").click((e) => deleteItem(e.target.parentNode.parentNode.getAttribute("gigid")));
 
 
-function openEditPage(method, id) {
-    console.log("Open edit page with method \"" + method + "\" and id \"" + id + "\"");
+function openEditPage(id) {
+    const form = document.getElementById("editPageForm");
+    form.action = "/admin/edit.php";
+    form.querySelector('input[name="id"]').value = id;
+    form.submit();
  }
 
  function deleteItem(id) {
-    console.log("deleeeete " + id);
+    const form = document.getElementById("editPageForm");
+    form.action = "/admin/api/delete.php";
+    form.querySelector('input[name="id"]').value = id;
+    form.submit();
  }

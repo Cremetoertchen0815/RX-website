@@ -16,7 +16,7 @@
     $username = $_POST["name"] ?? "";
     $password = $_POST["password"] ?? "";
 
-    if ($username != "Random@min" && $password != "Celine! Brot!") {
+    if ($username != "Random@min" || $password != "Celine! Brot!") {
         //Login section
         ?>
 
@@ -29,7 +29,7 @@
             }
             ?>
 
-            <form id="LogonForm" method="post" action="admin.php">
+            <form id="logonForm" method="post" action="/admin">
                 <label for="name">Benutzer: </label><input type="text" name="name"><br>
                 <label for="password">Passwort: </label><input type="password" name="password"><br>
                 <br>
@@ -70,12 +70,11 @@
         </div>
 
         <!-- 
-            This form is used by JavaScript to open the edit page with credentials and information
+            This form is used by JavaScript to generate the parameter template
         -->
-        <form method="post" id="editPageForm" action="edit.php">
+        <form method="post" id="editPageForm">
             <input type="hidden" name="name" value="<?php echo $username; ?>">
             <input type="hidden" name="password" value="<?php echo $password; ?>">
-            <input type="hidden" name="method" value="">
             <input type="hidden" name="id" value="">
         </form>
 
