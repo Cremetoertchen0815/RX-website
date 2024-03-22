@@ -67,7 +67,7 @@
 
 
         <div class="oldGig">
-            <a href="gallery.php?id=<?php echo $current[0] ?>" class="gigLink">
+            <a href="view.php?dir=<?php echo $current[0] ?>" class="gigLink">
                 <h3><?php echo $current[1] ?></h3>
                 <span class="dateSpanSmall"><?php echo $redate->format('d.m.Y') ?></span><br>
             </a>

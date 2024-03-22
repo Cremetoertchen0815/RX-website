@@ -1,1 +1,3 @@
 *.zip
+img/gigs/*
+admin/gigs.dat
