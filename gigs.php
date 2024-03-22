@@ -32,14 +32,18 @@
 
         $redate = DateTime::createFromFormat('Y-m-d', $current[4])
 
-        //Render gig
-        ?>
+            //Render gig
+            ?>
 
         <div class="gig">
             <div class="gigLeft">
-                <h2><?php echo $current[1] ?></h2>
-                <b>Eintritt: </b><?php echo $current[3] ?><br>
-                <span class="place"><?php echo $current[2] ?></span>
+                <?php
+                echo '<h2>' . $current[1] . '</h2>';
+                if ($current[2] != 'Privat')
+                    echo '<b>Eintritt: </b>' . $current[3] . '<br><span class="place">' . $current[2] . '</span>';
+                else
+                    echo '<i>' . $current[2] . '</i>';
+                ?>
             </div>
             <div class="gigRight">
                 <span class="dateSpan"><?php echo $redate->format('d.m.Y') ?></span><br>
@@ -48,30 +52,31 @@
             </div>
         </div>
 
-    <?php
+        <?php
     }
 
     echo '<span id="oldConcertsHeading">VERGANGENE KONZERTE:</span>';
 
     $old_dates = array_reverse($old_dates);
+    $counter = 0;
     foreach ($old_dates as $current) {
-        $redate = DateTime::createFromFormat('Y-m-d', $current[4])
+        $redate = DateTime::createFromFormat('Y-m-d', $current[4]);
+        if ($counter % 2 == 0)
+            echo '<div class="oldGigPair">';
         ?>
 
-        <div class="gig">
-            <div class="gigLeft">
-                <h2><?php echo $current[1] ?></h2>
-                <br>
-                <span class="place"><?php echo $current[2] ?></span>
-            </div>
-            <div class="gigRight">
-                <span class="dateSpan"><?php echo $redate->format('d.m.Y') ?></span><br>
-                <a href="gallery.php?id=<?php echo $current[0] ?>" class="gigLink">Bilder</a><br>
-                <a href="gallery.php?id=<?php echo $current[0] ?>" class="gigLink">Videos</a>
-            </div>
+
+        <div class="oldGig">
+            <a href="gallery.php?id=<?php echo $current[0] ?>" class="gigLink">
+                <h3><?php echo $current[1] ?></h3>
+                <span class="dateSpanSmall"><?php echo $redate->format('d.m.Y') ?></span><br>
+            </a>
         </div>
 
         <?php
+        if ($counter % 2 != 0 || $counter == count($old_dates))
+            echo '</div>';
+        $counter++;
     }
     ?>
 </body>

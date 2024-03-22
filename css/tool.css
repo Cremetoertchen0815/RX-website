@@ -73,4 +73,19 @@
 #editArea {
     margin-top: 50px;
     margin-left: 50px;
+    float: left;
 }
+
+#imageArea {
+    margin-top: 50px;
+    margin-left: 50px;
+    float: right;
+    width: 70%;
+}
+
+
+#submit {
+    width: 100%;
+    float: right;
+    margin-top: 25px;
+  }

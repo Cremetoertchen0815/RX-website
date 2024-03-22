@@ -12,6 +12,20 @@
     border-radius: 10px;
 }
 
+.oldGig {
+    border: black solid 2px;
+    width: 28%;
+    padding: 18px;
+    margin: 10px;
+    background-color: #CAB1B1;
+    border-radius: 10px;
+}
+
+.oldGigPair {
+    display: flex;
+    justify-content: center;
+}
+
 .gigLeft {
     float: left;
 }
@@ -27,11 +41,22 @@ h2 {
     margin-bottom: 21px;
 }
 
+h3 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
 .dateSpan {
     font-size: 1.3em;
     color: #ac1d1d;
     font-weight: bold;
     font-style: italic;
+}
+
+.dateSpanSmall {
+    font-size: 1em;
+    color: #ac1d1d;
+    font-weight: bold;
 }
 
 #oldConcertsHeading {
@@ -50,21 +75,39 @@ h2 {
 
 .gigLink {
     color: black;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 @media (max-width: 1000px) {
 
+    .oldGigPair {
+        display: block;
+    }
+
     .gig {
         border-left: none;
         border-right: none;
-        width: 100%;
+        width: calc(100% - 10px);
         height: auto;
         padding-right: 0px;
-        padding-left: 0px;
+        padding-left: 10px;
         border-radius: 0px;
         line-height: 22px;
         font-size: 0.9em;
+        margin-top: 0px;
+        margin-bottom: -4px;
+    }
+
+    .oldGig {
+        border-left: none;
+        border-right: none;
+        width: calc(100% - 10px);
+        height: auto;
+        padding-right: 0px;
+        border-radius: 0px;
+        line-height: 22px;
+        margin: -2px;
+        padding-left: 10px;
     }
 
     .gigLeft {
@@ -74,6 +117,7 @@ h2 {
     .gigRight {
         float: none;
         text-align: center;
+        margin-top: 7px;
     }
 
     #oldConcertsHeading {
