@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery View</title>
+    <link rel="stylesheet" href="css/main.css">
     <link href="css/simple-lightbox.min.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/simple-lightbox.jquery.min.js"></script>
 </head>
 
 <body>
+    <a class="backBtn" href="gigs.php">Zurück</a>
     <div class="gallery">
 
         <?php
@@ -50,7 +52,7 @@
 
                             <!-- Image -->
                             <a href="<?php echo $image_path; ?>">
-                                <img src="<?php echo $thumbnail_path; ?>" alt="" title="" width="106px" />
+                                <img src="<?php echo $thumbnail_path; ?>" alt="" title="" width="102px" />
                             </a>
                             <!-- --- -->
                             <?php

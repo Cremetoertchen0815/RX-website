@@ -78,7 +78,7 @@ for( $i=0 ; $i < $total ; $i++ ) {
 
     //Upload the file into the temp dir
     if(move_uploaded_file($tmpFilePath, $newFilePath)) {
-        createThumbnail($newFilePath, $newThumbPath, 256);
+        createThumbnail($newFilePath, $newThumbPath, 88);
     }
   }
 }

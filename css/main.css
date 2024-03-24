@@ -24,6 +24,12 @@ h1 {
     text-align: justify;
 }
 
+.backBtn {
+    margin-bottom: 25px;
+    display: block;
+    color:black;
+}
+
 @media (max-width: 1000px) {
 
     h1 {
