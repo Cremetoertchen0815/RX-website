@@ -30,7 +30,7 @@ iframe {
 
 #navWide {
     width: 1000px;
-    height: 100px;
+    height: 70px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -65,26 +65,26 @@ iframe {
 .navPoint {
     color: white;
     background-color: black;
-    font-size: 1.7em;
+    font-size: 1.35em;
     line-height: 2.2em;
-    width: 150px;
-    height: 60px;
+    width: 130px;
+    height: 50px;
     display: inline-block;
     text-align: center;
     cursor: pointer;
     margin: 5px;
-    margin-top: 25px;
+    margin-top: 15px;
     transition: background-color 0.1s ease-in-out;
 }
 
 vl {
     display: inline-block;
     width: 3px;
-    height: 60px;
+    height: 45px;
     background-color: white;
     border-radius: 5px;
     position: relative;
-    top: 20px;
+    top: 16px;
 }
 
 #pageCover {

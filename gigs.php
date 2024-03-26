@@ -38,7 +38,7 @@
         <div class="gig">
             <div class="gigLeft">
                 <?php
-                echo '<h2>' . $current[1] . '</h2>';
+                echo '<h3>' . $current[1] . '</h3>';
                 if ($current[2] != 'Privat')
                     echo '<b>Eintritt: </b>' . $current[3] . '<br><span class="place">' . $current[2] . '</span>';
                 else

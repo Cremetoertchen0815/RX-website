@@ -5,7 +5,7 @@ let narrowNavList = document.getElementById('navNarrowList'); // transform: rota
 narrowNav.onclick = () => {
 
     let direction = narrowNavList.style.height != "0px";
-    narrowNavList.style.height = direction ? "0px" : "220px";
+    narrowNavList.style.height = direction ? "0px" : "240px";
     navArrow.style.transform = direction ? "rotate(0deg)" : "rotate(180deg)";
 }
 

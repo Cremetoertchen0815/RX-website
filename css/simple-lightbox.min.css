@@ -8,10 +8,6 @@ body.hidden-scroll {
 	overflow: hidden
 }
 
-body {
-	padding: 2%;
-}
-
 .sl-overlay {
 	position: fixed;
 	left: 0;

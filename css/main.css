@@ -4,7 +4,7 @@
 }
 
 body {
-    margin: 0px;
+    margin: 4%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding-bottom: 180px;
 }
@@ -19,15 +19,14 @@ h1 {
     font-size: 3em;
 }
 
-.impressum {
-    margin: 5%;
-    text-align: justify;
-}
-
 .backBtn {
     margin-bottom: 25px;
     display: block;
-    color:black;
+    color: black;
+}
+
+.impressum {
+    text-align: justify;
 }
 
 @media (max-width: 1000px) {
