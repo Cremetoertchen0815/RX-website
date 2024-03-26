@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <h1>Herzlich Willkommen bei <br><b class="random">RANDOM X</b>!</h1>
+  <h1>Herzlich Willkommen bei <br><b class="random">RANDOM X</b>!</h1><br>
 
 
   <!-- Slideshow container -->
